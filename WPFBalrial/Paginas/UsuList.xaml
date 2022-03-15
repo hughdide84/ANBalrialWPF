@@ -22,12 +22,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100*" />
             </Grid.ColumnDefinitions>
-            <ListView Margin="10" Name="lvUsuarios" Grid.Column="0">
+            <ListView Margin="10" Name="lvUsuarios" Grid.Column="0" SelectionMode="Single">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding Nombre}" />
-                        <GridViewColumn Header="Apellidos" DisplayMemberBinding="{Binding Apellidos}" />
-                        <GridViewColumn Header="Login"  DisplayMemberBinding="{Binding Login}" />
+                        <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" />
+                        <GridViewColumn Header="Apellidos" DisplayMemberBinding="{Binding apellidos}" />
+                        <GridViewColumn Header="Login"  DisplayMemberBinding="{Binding login}" />
                     </GridView>
                 </ListView.View>
             </ListView>

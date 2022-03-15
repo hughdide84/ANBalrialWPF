@@ -29,13 +29,13 @@
                 <TextBlock Text="Apellidos"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <TextBox/>
-                <TextBox/>
+                <TextBox Name="tbNombre"/>
+                <TextBox Name="tbApellidos"/>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Button Name="btCancelar" Content="Cancelar" FontSize="15" Margin="10,5,0,5" Width="100" Height="30"/>
-            <Button Content="Guardar" FontSize="15" Margin="10,5,0,5" Width="100" Height="30"/>
+            <Button Name="btGuardar" Content="Guardar" FontSize="15" Margin="10,5,0,5" Width="100" Height="30"/>
         </StackPanel>
 
     </Grid>

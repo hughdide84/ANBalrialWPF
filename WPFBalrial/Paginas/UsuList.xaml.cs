@@ -26,8 +26,20 @@ namespace WPFBalrial.Paginas
         public UsuList()
         {
             InitializeComponent();
-            ObtenerUsuariosAsync();
+            ListarUsuarios();
             this.btInsertar.Click += BtInsertar_Click;
+            this.btEliminar.Click += BtEliminar_Click;
+        }
+
+        private void BtEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            var eleSeleccionados = this.lvUsuarios.SelectedItems;
+
+            foreach (UsuarioDTO usuarioDTO in eleSeleccionados)
+            {
+                EliminarUsuario(usuarioDTO.id);
+            }
+            ListarUsuarios();
         }
 
         private void BtInsertar_Click(object sender, RoutedEventArgs e)
@@ -36,27 +48,18 @@ namespace WPFBalrial.Paginas
             this.NavigationService.Navigate(usuIns);
         }
 
-        public void ObtenerUsuariosAsync()
+        public void ListarUsuarios()
         {
 
             try
             {
-                // Posting.  
                 using (var client = new HttpClient())
                 {
-                    // Setting Base address.  
                     client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
-
-                    // Setting content type.  
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    // Setting timeout.  
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
-
-                    // HTTP GET  
                     HttpResponseMessage response = client.GetAsync("api/usuarios").Result;
-                    // response = await client.PostAsJsonAsync("api/WebApi/PostRegInfo", requestObj).ConfigureAwait(false);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -68,24 +71,32 @@ namespace WPFBalrial.Paginas
                     {
                         MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
                     }
-                    /*
-                    // Verification  
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Reading Response.  
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        responseObj = JsonConvert.DeserializeObject<RegInfoResponseObj>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-                        // Releasing.  
-                        response.Dispose();
-                    }
-                    else
+        public void EliminarUsuario(int idUsuario)
+        {
+
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
+                    HttpResponseMessage response = client.DeleteAsync("api/usuarios/"+idUsuario).Result;
+
+                    if (!response.IsSuccessStatusCode)
                     {
-                        // Reading Response.  
-                        string result = response.Content.ReadAsStringAsync().Result;
-                        responseObj.code = 602;
+                        MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
                     }
-                    */
+
                 }
             }
             catch (Exception ex)

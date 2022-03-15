@@ -25,6 +25,15 @@ namespace WPFBalrial
         {
             InitializeComponent();
             btUsuarios.Click += BtUsuarios_Click;
+            btAcceder.Click += BtAcceder_Click;
+            pnlLogin.Visibility = Visibility.Visible;
+            pnlMenu.Visibility = Visibility.Hidden;
+        }
+
+        private void BtAcceder_Click(object sender, RoutedEventArgs e)
+        {
+            pnlLogin.Visibility = Visibility.Collapsed;
+            pnlMenu.Visibility = Visibility.Visible;
         }
 
         private void BtUsuarios_Click(object sender, RoutedEventArgs e)

@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFBalrial"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="BALRIAL APP" Height="450" Width="800">
     <DockPanel>
-        <DockPanel DockPanel.Dock="Left" Width="200" Margin="5">
-            <StackPanel DockPanel.Dock="Top" Height="100">
-                <TextBlock Text="Usuario"/>
-                <TextBox Name="tbUsuario"/>
-                <TextBlock Text="Contraseña"/>
-                <TextBox Name="tbPassword"/>                
+        <DockPanel DockPanel.Dock="Left" Width="150" Margin="5">
+            <StackPanel Name="pnlLogin" DockPanel.Dock="Top" >
+                <TextBlock Text="Usuario" Margin="2"/>
+                <TextBox Name="tbUsuario" Margin="2"/>
+                <TextBlock Text="Contraseña" Margin="2"/>
+                <TextBox Name="tbPassword" Margin="2"/>
+                <Button Name="btAcceder" FontSize="15" Content="Acceder" Height="25" Margin="5,20,5,0"/>
             </StackPanel>
             <Grid>
-            <StackPanel Width="200">
+                <StackPanel Name="pnlMenu">
                     <Button Name="btUsuarios" FontSize="15" Content="Usuarios" Margin="5"/>
                     <Button Content="Entidades" FontSize="15" Margin="5"/>
                     <Button Content="Proyectos" FontSize="15" Margin="5"/>

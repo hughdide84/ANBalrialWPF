@@ -8,9 +8,17 @@ namespace WPFBalrial.DTOs
 {
     public class UsuarioDTO
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Apellidos { get; set; }
-        public string Login { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string apellidos { get; set; }
+        public string login { get; set; }
+        public string telefono { get; set; }
+        public string email { get; set; }
+        public int? cp { get; set; }
+        public int? telegramId { get; set; }
+        public string dias { get; set; }
+        public string horaInicio { get; set; }
+        public string horaFin { get; set; }
+        public int? disponibilidad { get; set; }
     }
 }
