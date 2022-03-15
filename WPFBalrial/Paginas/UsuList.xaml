@@ -11,18 +11,19 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
-            <TextBlock Text="Listado de usuarios" FontSize="20" Margin="10,10,0,0"/>
+            <TextBlock Text="Listado de usuarios" FontSize="20" Margin="0,10,0,0"/>
+            <TextBlock Name="tbAvisos" FontSize="15"/>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100*" />
             </Grid.ColumnDefinitions>
-            <ListView Margin="10" Name="lvUsuarios" Grid.Column="0" SelectionMode="Single">
+            <ListView Margin="0,5,5,5" Name="lvUsuarios" Grid.Column="0" SelectionMode="Single">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" />
@@ -33,9 +34,9 @@
             </ListView>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Name="btInsertar" Content="Añadir" FontSize="15" Margin="10,5,0,5" Width="100" Height="30"/>
-            <Button Name="btActualizar" Content="Actualizar" FontSize="15" Margin="10,5,0,5" Width="100" Height="30"/>
-            <Button Name="btEliminar" Content="Eliminar" FontSize="15" Margin="10,5,0,5" Width="100" Height="30"/>
+            <Button Name="btInsertar" Content="Añadir" FontSize="15" Margin="10,5,0,0" Width="100" Height="30"/>
+            <Button Name="btActualizar" Content="Actualizar" FontSize="15" Margin="10,5,0,0" Width="100" Height="30"/>
+            <Button Name="btEliminar" Content="Eliminar" FontSize="15" Margin="10,5,0,0" Width="100" Height="30"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -65,11 +65,11 @@ namespace WPFBalrial.Paginas
                     {
                         var usuarios = response.Content.ReadAsAsync<IEnumerable<UsuarioDTO>>().Result;
                         lvUsuarios.ItemsSource = usuarios;
-
                     }
                     else
                     {
-                        MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
+                        tbAvisos.Text = "Se ha producido un error";
+                        tbAvisos.Foreground = Brushes.Red;
                     }
                 }
             }
@@ -92,9 +92,14 @@ namespace WPFBalrial.Paginas
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
                     HttpResponseMessage response = client.DeleteAsync("api/usuarios/"+idUsuario).Result;
 
-                    if (!response.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
+                        tbAvisos.Text = "Eliminado correctamente";
+                        tbAvisos.Foreground = Brushes.Green;
+                    } else
+                    {
+                        tbAvisos.Text = "Se ha producido un error";
+                        tbAvisos.Foreground = Brushes.Red;
                     }
 
                 }

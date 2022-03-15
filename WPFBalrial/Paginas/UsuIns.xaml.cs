@@ -26,7 +26,7 @@ namespace WPFBalrial.Paginas
         public UsuIns()
         {
             InitializeComponent();
-            btCancelar.Click += BtCancelar_Click;
+            btSalir.Click += BtSalir_Click;
             btGuardar.Click += BtGuardar_Click;
         }
 
@@ -35,7 +35,7 @@ namespace WPFBalrial.Paginas
             InsertarUsuario();
         }
 
-        private void BtCancelar_Click(object sender, RoutedEventArgs e)
+        private void BtSalir_Click(object sender, RoutedEventArgs e)
         {
             if (this.NavigationService.CanGoBack)
             {
@@ -66,7 +66,7 @@ namespace WPFBalrial.Paginas
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://localhost:8080/"); 
+                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/"); 
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
@@ -74,12 +74,13 @@ namespace WPFBalrial.Paginas
 
                     if (response.IsSuccessStatusCode)
                     {
-                        MessageBox.Show("Registro correcto");
-
+                        tbAvisos.Text = "Registrado correctamente";
+                        tbAvisos.Foreground = Brushes.Green;
                     }
                     else
                     {
-                        MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
+                        tbAvisos.Text = "Se ha producido un error";
+                        tbAvisos.Foreground = Brushes.Red;
                     }
 
                 }
