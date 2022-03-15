@@ -1,4 +1,4 @@
-﻿<Page x:Class="WPFBalrial.Paginas.UsuIns"
+﻿<Page x:Class="WPFBalrial.Paginas.UsuUpd"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WPFBalrial.Paginas"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="UsuIns">
+      Title="UsuUpd">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,7 +15,7 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
-            <TextBlock Text="Insertar usuario" FontSize="20" Margin="0,10,0,0"/>
+            <TextBlock Text="Actualizar usuario" FontSize="20" Margin="0,10,0,0"/>
             <TextBlock Name="tbAvisos" FontSize="15"/>
         </StackPanel>
         <Grid Grid.Row="1">
@@ -26,10 +26,12 @@
                 <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
+                <TextBlock Text="Id" HorizontalAlignment="Right" Margin="0,0,5,0"/>
                 <TextBlock Text="Nombre" HorizontalAlignment="Right" Margin="0,0,5,0"/>
                 <TextBlock Text="Apellidos" HorizontalAlignment="Right" Margin="0,0,5,0"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
+                <TextBox Name="tbId" IsEnabled="False"/>
                 <TextBox Name="tbNombre"/>
                 <TextBox Name="tbApellidos"/>
             </StackPanel>
@@ -38,6 +40,5 @@
             <Button Name="btSalir" Content="Salir" FontSize="15" Margin="10,5,0,0" Width="100" Height="30"/>
             <Button Name="btGuardar" Content="Guardar" FontSize="15" Margin="10,5,0,0" Width="100" Height="30"/>
         </StackPanel>
-
     </Grid>
 </Page>

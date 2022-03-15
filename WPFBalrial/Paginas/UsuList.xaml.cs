@@ -26,26 +26,67 @@ namespace WPFBalrial.Paginas
         public UsuList()
         {
             InitializeComponent();
+
+            // Cargar datos al iniciar pantalla
             ListarUsuarios();
+
+            // Inicializar eventos botones
             this.btInsertar.Click += BtInsertar_Click;
             this.btEliminar.Click += BtEliminar_Click;
+            this.btActualizar.Click += BtActualizar_Click;
+        }
+
+        private void BtActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            var eleSeleccionados = this.lvUsuarios.SelectedItems;
+
+            UsuarioDTO usuarioDTO = new UsuarioDTO();
+            var idSel = 0;
+            foreach (UsuarioDTO usuarioDTOSel in eleSeleccionados)
+            {
+                usuarioDTO = usuarioDTOSel;
+                idSel = usuarioDTOSel.id;
+            }
+
+            if (idSel == 0)
+            {
+                tbAvisos.Text = "Debe seleccionar un usuario";
+                tbAvisos.Foreground = Brushes.Red;
+            }
+            else
+            {
+                UsuUpd selFrame = new UsuUpd(usuarioDTO);
+                this.NavigationService.Navigate(selFrame, idSel);
+            }
         }
 
         private void BtEliminar_Click(object sender, RoutedEventArgs e)
         {
             var eleSeleccionados = this.lvUsuarios.SelectedItems;
 
+            var idSel = 0;
             foreach (UsuarioDTO usuarioDTO in eleSeleccionados)
             {
-                EliminarUsuario(usuarioDTO.id);
+                idSel = usuarioDTO.id;
+                
             }
-            ListarUsuarios();
+
+            if (idSel == 0)
+            {
+                tbAvisos.Text = "Debe seleccionar un usuario";
+                tbAvisos.Foreground = Brushes.Red;
+            }
+            else
+            {
+                EliminarUsuario(idSel);
+                ListarUsuarios();
+            }
         }
 
         private void BtInsertar_Click(object sender, RoutedEventArgs e)
         {
-            UsuIns usuIns = new UsuIns();
-            this.NavigationService.Navigate(usuIns);
+            UsuIns selFrame = new UsuIns();
+            this.NavigationService.Navigate(selFrame);
         }
 
         public void ListarUsuarios()
@@ -78,7 +119,6 @@ namespace WPFBalrial.Paginas
                 throw ex;
             }
         }
-
         public void EliminarUsuario(int idUsuario)
         {
 

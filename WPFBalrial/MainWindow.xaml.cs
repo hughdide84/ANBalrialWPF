@@ -38,8 +38,8 @@ namespace WPFBalrial
 
         private void BtUsuarios_Click(object sender, RoutedEventArgs e)
         {
-            UsuList pagina = new UsuList();
-            frmPrincipal.Navigate(pagina);
+            UsuList selFrame = new UsuList();
+            frmPrincipal.Navigate(selFrame);
         }
     }
 }
