@@ -90,13 +90,15 @@ namespace WPFBalrial.Paginas
 
                     if (response.IsSuccessStatusCode)
                     {
-                        tbAvisos.Text = "Actualizado correctamente";
-                        tbAvisos.Foreground = Brushes.Green;
+                        tbAvisos.Text = " Actualizado correctamente";
+                        tbAvisos.Foreground = Brushes.White;
+                        tbAvisos.Background = Brushes.Green;
                     }
                     else
                     {
-                        tbAvisos.Text = "Se ha producido un error";
-                        tbAvisos.Foreground = Brushes.Red;
+                        tbAvisos.Text = " Se ha producido un error";
+                        tbAvisos.Foreground = Brushes.White;
+                        tbAvisos.Background = Brushes.Crimson;
                     }
 
                 }

@@ -75,12 +75,14 @@ namespace WPFBalrial.Paginas
                     if (response.IsSuccessStatusCode)
                     {
                         tbAvisos.Text = "Registrado correctamente";
-                        tbAvisos.Foreground = Brushes.Green;
+                        tbAvisos.Foreground = Brushes.White;
+                        tbAvisos.Background = Brushes.Green;
                     }
                     else
                     {
                         tbAvisos.Text = "Se ha producido un error";
-                        tbAvisos.Foreground = Brushes.Red;
+                        tbAvisos.Foreground = Brushes.White;
+                        tbAvisos.Background = Brushes.Crimson;
                     }
 
                 }

@@ -56,7 +56,8 @@ namespace WPFBalrial.Paginas
             if (idSel == 0)
             {
                 tbAvisos.Text = "Debe seleccionar un usuario";
-                tbAvisos.Foreground = Brushes.Red;
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
             }
             else
             {
@@ -79,7 +80,8 @@ namespace WPFBalrial.Paginas
             if (idSel == 0)
             {
                 tbAvisos.Text = "Debe seleccionar un usuario";
-                tbAvisos.Foreground = Brushes.Red;
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
             }
             else
             {
@@ -115,7 +117,8 @@ namespace WPFBalrial.Paginas
                     else
                     {
                         tbAvisos.Text = "Se ha producido un error";
-                        tbAvisos.Foreground = Brushes.Red;
+                        tbAvisos.Foreground = Brushes.White;
+                        tbAvisos.Background = Brushes.Crimson;
                     }
                 }
             }
@@ -140,11 +143,13 @@ namespace WPFBalrial.Paginas
                     if (response.IsSuccessStatusCode)
                     {
                         tbAvisos.Text = "Eliminado correctamente";
-                        tbAvisos.Foreground = Brushes.Green;
+                        tbAvisos.Foreground = Brushes.White;
+                        tbAvisos.Background = Brushes.Green;
                     } else
                     {
                         tbAvisos.Text = "Se ha producido un error";
-                        tbAvisos.Foreground = Brushes.Red;
+                        tbAvisos.Foreground = Brushes.White;
+                        tbAvisos.Background = Brushes.Crimson;
                     }
 
                 }
