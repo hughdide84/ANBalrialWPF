@@ -28,12 +28,17 @@ namespace WPFBalrial.Paginas
             InitializeComponent();
 
             // Cargar datos al iniciar pantalla
-            ListarUsuarios();
+            this.Loaded += UsuList_Loaded;
 
             // Inicializar eventos botones
             this.btInsertar.Click += BtInsertar_Click;
             this.btEliminar.Click += BtEliminar_Click;
             this.btActualizar.Click += BtActualizar_Click;
+        }
+
+        private void UsuList_Loaded(object sender, RoutedEventArgs e)
+        {
+            ListarUsuarios();
         }
 
         private void BtActualizar_Click(object sender, RoutedEventArgs e)
