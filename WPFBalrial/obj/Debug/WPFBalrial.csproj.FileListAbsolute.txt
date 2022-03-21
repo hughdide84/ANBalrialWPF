@@ -74,3 +74,16 @@ C:\Users\DOCENCIA\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\Usu
 C:\Users\DOCENCIA\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\UsuUpd.baml
 C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\UsuUpd.g.cs
 C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\UsuUpd.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\App.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\EntList.g.cs
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\ProList.g.cs
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\EntList.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\ProList.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\EntIns.g.cs
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\EntUpd.g.cs
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\ProIns.g.cs
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\ProUpd.g.cs
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\EntIns.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\EntUpd.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\ProIns.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\ProUpd.baml

@@ -74,6 +74,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Paginas\EntIns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\EntList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\EntUpd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\ProIns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\ProList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\ProUpd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\UsuIns.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,6 +112,24 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Paginas\EntIns.xaml.cs">
+      <DependentUpon>EntIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\EntList.xaml.cs">
+      <DependentUpon>EntList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\EntUpd.xaml.cs">
+      <DependentUpon>EntUpd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ProIns.xaml.cs">
+      <DependentUpon>ProIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ProList.xaml.cs">
+      <DependentUpon>ProList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ProUpd.xaml.cs">
+      <DependentUpon>ProUpd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\UsuIns.xaml.cs">
       <DependentUpon>UsuIns.xaml</DependentUpon>
     </Compile>

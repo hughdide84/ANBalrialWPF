@@ -7,19 +7,19 @@
         mc:Ignorable="d"
         Title="BALRIAL APP" Height="450" Width="800">
     <DockPanel>
-        <DockPanel DockPanel.Dock="Left" Width="150" Margin="5">
+        <DockPanel DockPanel.Dock="Left" Width="150">
             <StackPanel Name="pnlLogin" DockPanel.Dock="Top" >
-                <TextBlock Text="Usuario" Margin="2"/>
-                <TextBox Name="tbUsuario" Margin="2"/>
-                <TextBlock Text="Contraseña" Margin="2"/>
-                <TextBox Name="tbPassword" Margin="2"/>
-                <Button Name="btAcceder" FontSize="15" Content="Acceder" Height="25" Margin="5,20,5,0"/>
+                <TextBlock Text="Usuario" Margin="5,5,0,0"/>
+                <TextBox Name="tbUsuario" Margin="5,5,0,0"/>
+                <TextBlock Text="Contraseña" Margin="5,5,0,0"/>
+                <TextBox Name="tbPassword" Margin="5,5,0,0"/>
+                <Button Name="btAcceder" Content="ACCEDER" Margin="5,10,0,0"/>
             </StackPanel>
             <Grid>
                 <StackPanel Name="pnlMenu">
-                    <Button Name="btUsuarios" FontSize="15" Content="Usuarios" Margin="5"/>
-                    <Button Content="Entidades" FontSize="15" Margin="5"/>
-                    <Button Content="Proyectos" FontSize="15" Margin="5"/>
+                    <Button Name="btUsuarios" Content="USUARIOS"/>
+                    <Button Name="btEntidades" Content="ENTIDADES"/>
+                    <Button Name="btProyectos" Content="PROYECTOS"/>
                 </StackPanel>
             </Grid>
         </DockPanel>

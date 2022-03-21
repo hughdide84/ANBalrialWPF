@@ -12,18 +12,21 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="85*"/>
-            <RowDefinition Height="15*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
-            <TextBlock Text="Listado de usuarios" FontSize="20" Margin="0,10,0,0"/>
-            <TextBlock Name="tbAvisos" FontSize="15" Margin="0,0,5,0"/>
+            <Border Style="{StaticResource bordeTitulo}" >
+                <TextBlock Text="Listado de usuarios" Style="{StaticResource txtTitulo}"/>
+            </Border>
+            <TextBlock Name="tbAvisos" Style="{StaticResource txtAviso}"/>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="150" />
             </Grid.ColumnDefinitions>
-            <ListView Margin="0,5,5,5" Name="lvUsuarios" Grid.Column="0" SelectionMode="Single">
+            <ListView Name="lvUsuarios" Grid.Column="0">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" />
@@ -32,11 +35,19 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="BUSCADOR" Margin="5,5,5,0"/>
+                <TextBlock Text="Nombre" Margin="5,5,5,0"/>
+                <TextBox Name="tbNombre" Margin="5,5,5,0"/>
+                <TextBlock Text="Apellidos" Margin="5,5,5,0"/>
+                <TextBox Name="tbApellidos" Margin="5,5,5,0"/>
+                <Button Name="btBuscar" Content="BUSCAR" Margin="5,10,0,0"/>
+            </StackPanel>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Name="btInsertar" Content="Añadir" FontSize="15" Margin="10,5,0,0" Width="100" Height="30"/>
-            <Button Name="btActualizar" Content="Actualizar" FontSize="15" Margin="10,5,0,0" Width="100" Height="30"/>
-            <Button Name="btEliminar" Content="Eliminar" FontSize="15" Margin="10,5,0,0" Width="100" Height="30"/>
+            <Button Name="btInsertar" Content="AÑADIR"/>
+            <Button Name="btActualizar" Content="EDITAR"/>
+            <Button Name="btEliminar" Content="ELIMINAR"/>
         </StackPanel>
     </Grid>
 </Page>

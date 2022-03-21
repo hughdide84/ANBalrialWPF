@@ -26,8 +26,22 @@ namespace WPFBalrial
             InitializeComponent();
             btUsuarios.Click += BtUsuarios_Click;
             btAcceder.Click += BtAcceder_Click;
+            btEntidades.Click += BtEntidades_Click;
+            btProyectos.Click += BtProyectos_Click;
             pnlLogin.Visibility = Visibility.Visible;
             pnlMenu.Visibility = Visibility.Hidden;
+        }
+
+        private void BtProyectos_Click(object sender, RoutedEventArgs e)
+        {
+            ProList selFrame = new ProList();
+            frmPrincipal.Navigate(selFrame);
+        }
+
+        private void BtEntidades_Click(object sender, RoutedEventArgs e)
+        {
+            EntList selFrame = new EntList();
+            frmPrincipal.Navigate(selFrame);
         }
 
         private void BtAcceder_Click(object sender, RoutedEventArgs e)

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,15 +36,32 @@ namespace WPFBalrial.Paginas
             this.btInsertar.Click += BtInsertar_Click;
             this.btEliminar.Click += BtEliminar_Click;
             this.btActualizar.Click += BtActualizar_Click;
+            this.btBuscar.Click += BtBuscar_Click;
+        }
+
+        private void BtBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            ResetearAviso();
+            ListarUsuarios();
         }
 
         private void UsuList_Loaded(object sender, RoutedEventArgs e)
         {
+            ResetearAviso();
             ListarUsuarios();
+        }
+
+        private void ResetearAviso ()
+        {
+            tbAvisos.Text = "";
+            tbAvisos.Foreground = Brushes.White;
+            tbAvisos.Background = Brushes.White;
+            tbAvisos.Visibility = Visibility.Collapsed;
         }
 
         private void BtActualizar_Click(object sender, RoutedEventArgs e)
         {
+            ResetearAviso();
             var eleSeleccionados = this.lvUsuarios.SelectedItems;
 
             UsuarioDTO usuarioDTO = new UsuarioDTO();
@@ -68,6 +87,7 @@ namespace WPFBalrial.Paginas
 
         private void BtEliminar_Click(object sender, RoutedEventArgs e)
         {
+            ResetearAviso();
             var eleSeleccionados = this.lvUsuarios.SelectedItems;
 
             var idSel = 0;
@@ -92,6 +112,7 @@ namespace WPFBalrial.Paginas
 
         private void BtInsertar_Click(object sender, RoutedEventArgs e)
         {
+            ResetearAviso();
             UsuIns selFrame = new UsuIns();
             this.NavigationService.Navigate(selFrame);
         }
@@ -111,7 +132,17 @@ namespace WPFBalrial.Paginas
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var usuarios = response.Content.ReadAsAsync<IEnumerable<UsuarioDTO>>().Result;
+                        IEnumerable<UsuarioDTO> usuarios = response.Content.ReadAsAsync<IEnumerable<UsuarioDTO>>().Result;
+
+                        if (tbNombre.Text != "") { 
+                            usuarios = usuarios.Where(o => o.nombre.ToUpper().Contains(tbNombre.Text.ToUpper()));
+                        }
+
+                        if (tbApellidos.Text != "")
+                        {
+                            usuarios = usuarios.Where(o => o.apellidos.ToUpper().Contains(tbApellidos.Text.ToUpper()));
+                        }
+
                         lvUsuarios.ItemsSource = usuarios;
                     }
                     else
