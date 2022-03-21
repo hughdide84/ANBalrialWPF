@@ -72,3 +72,5 @@ C:\Users\DOCENCIA\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\WPFBalrial.
 C:\Users\DOCENCIA\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\WPFBalrial.pdb
 C:\Users\DOCENCIA\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\UsuUpd.g.cs
 C:\Users\DOCENCIA\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\UsuUpd.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\UsuUpd.g.cs
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\UsuUpd.baml
