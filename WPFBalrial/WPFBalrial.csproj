@@ -80,6 +80,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DTOs\EntidadDTO.cs" />
+    <Compile Include="DTOs\UbicacionDTO.cs" />
     <Compile Include="DTOs\UsuarioDTO.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -110,6 +112,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\ProUpd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\UbiIns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\UbiUpd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,6 +157,12 @@
     </Compile>
     <Compile Include="Paginas\ProUpd.xaml.cs">
       <DependentUpon>ProUpd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\UbiIns.xaml.cs">
+      <DependentUpon>UbiIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\UbiUpd.xaml.cs">
+      <DependentUpon>UbiUpd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\UsuIns.xaml.cs">
       <DependentUpon>UsuIns.xaml</DependentUpon>

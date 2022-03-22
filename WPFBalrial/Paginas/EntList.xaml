@@ -9,6 +9,30 @@
       Title="EntList">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Border Style="{StaticResource bordeTitulo}" >
+                <TextBlock Text="Listado de entidades" Style="{StaticResource txtTitulo}"/>
+            </Border>
+            <TextBlock Name="tbAvisos" Style="{StaticResource txtAviso}"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <ListView Name="lvEntidades" Grid.Column="0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="btInsertar" Content="AÑADIR"/>
+            <Button Name="btActualizar" Content="EDITAR"/>
+            <Button Name="btEliminar" Content="ELIMINAR"/>
+        </StackPanel>
     </Grid>
 </Page>

@@ -9,6 +9,61 @@
       Title="EntUpd">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Border Style="{StaticResource bordeTitulo}" >
+                <TextBlock Text="Actualizar entidad" Style="{StaticResource txtTitulo}"/>
+            </Border>
+            <TextBlock Name="tbAvisos" Style="{StaticResource txtAviso}"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Id"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Nombre"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox Name="tbId" IsEnabled="False"/>
+                <TextBox Name="tbNombre"/>
+            </StackPanel>
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100*"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <ListView Name="lvUbicaciones" Grid.Row="0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" />
+                            <GridViewColumn Header="Direccion" DisplayMemberBinding="{Binding direccion}" />
+                            <GridViewColumn Header="Cp" DisplayMemberBinding="{Binding cp}" />
+                            <GridViewColumn Header="Poblacion" DisplayMemberBinding="{Binding poblacion}" />
+                            <GridViewColumn Header="Zona" DisplayMemberBinding="{Binding zona}" />
+                            <GridViewColumn Header="Longitud" DisplayMemberBinding="{Binding longitud}" />
+                            <GridViewColumn Header="Latitud" DisplayMemberBinding="{Binding latitud}" />
+                            <GridViewColumn Header="Volumen" DisplayMemberBinding="{Binding volumen}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Button Name="btInsertarUbi" Content="AÑADIR" Width="65" Height="25" FontSize="11"/>
+                    <Button Name="btActualizarUbi" Content="EDITAR" Width="65" Height="25" FontSize="11"/>
+                    <Button Name="btEliminarUbi" Content="ELIMINAR" Width="65" Height="25" FontSize="11"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="btSalir" Content="SALIR"/>
+            <Button Name="btGuardar" Content="GUARDAR"/>
+        </StackPanel>
     </Grid>
 </Page>
