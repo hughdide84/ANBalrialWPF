@@ -5,34 +5,19 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-       
+        <Style TargetType="Window">
+            <Setter Property="BorderBrush" Value="#FF42C2FF"/>
+        </Style>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#85F4FF"/>
+            <Setter Property="Background" Value="#FF96F6FF"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Lucida Sans"/>
+            <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Padding" Value="4"/>
             <Setter Property="Width" Value="120"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="5,5,0,5"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Border CornerRadius="10"/>
-                        <!--
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" Value="White"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="White"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                        -->
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Foreground" Value="Black"/>
@@ -76,13 +61,23 @@
             <Setter Property="Background" Value="#FFEFFFFD"/>
         </Style>
         <Style TargetType="GridViewColumnHeader">
-            <Setter Property="Background" Value="#FF85F4FF"/>
+            <Setter Property="Background" Value="#FF96F6FF"/>
         </Style>
         <Style TargetType="Frame">
             <Setter Property="Background" Value="#FFEFFFFD"/>
         </Style>
         <Style TargetType="DockPanel">
             <Setter Property="Background" Value="#FFEFFFFD"/>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="375"/>
+            <Setter Property="Height" Value="668"/>
+            <Setter Property="Opacity" Value="0.6"/>
         </Style>
 
     </Application.Resources>

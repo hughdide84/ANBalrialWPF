@@ -35,7 +35,7 @@
                 </ListView.View>
             </ListView>
             <StackPanel Grid.Column="1" x:Name="BuscadorUsuarios">
-                <TextBlock Text="BUSCADOR" Margin="5,5,5,0"/>
+                <TextBlock  Text="BUSCADOR" Margin="5,5,5,0"/>
                 <TextBlock Text="Nombre" Margin="5,5,5,0"/>
                 <TextBox Name="tbNombre" Margin="5,5,5,0"/>
                 <TextBlock Text="Apellidos" Margin="5,5,5,0"/>
@@ -43,7 +43,7 @@
                 <Button Name="btBuscar" Content="BUSCAR" Margin="5,10,0,0"/>
             </StackPanel>
         </Grid>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
+        <StackPanel  Grid.Row="2" Orientation="Horizontal">
             <Button Name="btInsertar" Content="AÑADIR"/>
             <Button Name="btActualizar" Content="EDITAR"/>
             <Button Name="btEliminar" Content="ELIMINAR"/>

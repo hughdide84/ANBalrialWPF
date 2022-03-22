@@ -125,3 +125,5 @@ C:\Users\FP\Documents\ANBalrialWPF\WPFBalrial\obj\Debug\WPFBalrial.csproj.Genera
 C:\Users\FP\Documents\ANBalrialWPF\WPFBalrial\obj\Debug\WPFBalrial.csproj.CoreCompileInputs.cache
 C:\Users\FP\Documents\ANBalrialWPF\WPFBalrial\obj\Debug\WPFBalrial.exe
 C:\Users\FP\Documents\ANBalrialWPF\WPFBalrial\obj\Debug\WPFBalrial.pdb
+C:\Users\FP\Documents\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\IniLogo.g.cs
+C:\Users\FP\Documents\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\IniLogo.baml
