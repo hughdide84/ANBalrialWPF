@@ -30,12 +30,42 @@
             <StackPanel Grid.Column="0">
                 <TextBlock Text="Nombre" HorizontalAlignment="Right" Margin="0,0,5,0"/>
                 <TextBlock Text="Apellidos" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Login" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Código postal" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Email" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Teléfono" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Telegram id" HorizontalAlignment="Right" Margin="0,0,5,0"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBox Name="tbNombre"/>
                 <TextBox Name="tbApellidos"/>
+                <TextBox Name="tbLogin"/>
+                <TextBox Name="tbEmail"/>
+                <TextBox Name="tbTelefono"/>
+                <TextBox Name="tbCP"/>
+                <TextBox Name="tbTelegramId"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Hora inicio"/>
+                <TextBlock Text="Hora fin"/>
+                <TextBlock Text="Días"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="3">
+                <TextBox Name="tbHoraInicio"/>
+                <TextBox Name="tbHoraFin"/>
+                                          
+                <CheckBox Name="cbL" Content="L" IsChecked="False"/>
+                <CheckBox Name="cbM" Content="M" IsChecked="False"/>
+                <CheckBox Name="cbX" Content="X" IsChecked="False"/>
+                <CheckBox Name="cbJ" Content="J" IsChecked="False"/>
+                <CheckBox Name="cbV" Content="V" IsChecked="False"/>
+                <CheckBox Name="cbS" Content="S" IsChecked="False"/>
+                <CheckBox Name="cbD" Content="D" IsChecked="False"/>
             </StackPanel>
         </Grid>
+        
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Button Name="btSalir" Content="SALIR"/>
             <Button Name="btGuardar" Content="GUARDAR"/>

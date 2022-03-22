@@ -61,20 +61,50 @@ namespace WPFBalrial.Paginas
 
         public void ActualizarUsuario()
         {
+            String diasSemana = "";
+            if (cbL.IsChecked == true)
+            {
+                diasSemana = diasSemana + "L";
+            }
 
+            if (cbM.IsChecked == true)
+            {
+                diasSemana = diasSemana + "M";
+            }
+
+            if (cbX.IsChecked == true)
+            {
+                diasSemana = diasSemana + "X";
+            }
+            if (cbJ.IsChecked == true)
+            {
+                diasSemana = diasSemana + "J";
+            }
+            if (cbV.IsChecked == true)
+            {
+                diasSemana = diasSemana + "V";
+            }
+            if (cbS.IsChecked == true)
+            {
+                diasSemana = diasSemana + "S";
+            }
+            if (cbD.IsChecked == true)
+            {
+                diasSemana = diasSemana + "D";
+            }
             var usuarioDTO = new UsuarioDTO()
             {
                 id = Int32.Parse(tbId.Text),
                 nombre = tbNombre.Text,
                 apellidos = tbApellidos.Text,
-                login = "xxx",
-                telefono = "xxx",
-                email = "xxx",
-                cp = 1,
-                telegramId = 1,
-                dias = "LM",
-                horaInicio = "10:00",
-                horaFin = "20:00",
+                login = tbLogin.Text,
+                telefono = tbTelefono.Text,
+                email = tbEmail.Text,
+                cp = Int32.Parse(tbCP.Text),
+                telegramId = Int32.Parse(tbTelegramId.Text),
+                dias = diasSemana,
+                horaInicio = tbHoraInicio.Text,
+                horaFin = tbHoraFin.Text,
                 disponibilidad = 1
             };
 
