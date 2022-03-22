@@ -87,3 +87,11 @@ C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\EntIns.
 C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\EntUpd.baml
 C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\ProIns.baml
 C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\ProUpd.baml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\bin\Debug\OxyPlot.dll
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\bin\Debug\OxyPlot.xml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\bin\Debug\OxyPlot.Wpf.Shared.xml
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\InfProyecto.g.cs
+C:\Users\Hugo\Documents\GitHub\ANBalrialWPF\WPFBalrial\obj\Debug\Paginas\InfProyecto.baml

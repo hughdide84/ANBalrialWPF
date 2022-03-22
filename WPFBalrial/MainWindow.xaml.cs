@@ -30,6 +30,10 @@ namespace WPFBalrial
             btProyectos.Click += BtProyectos_Click;
             pnlLogin.Visibility = Visibility.Visible;
             pnlMenu.Visibility = Visibility.Hidden;
+
+            // Para pruebas cambiar aqui
+            InfProyecto selFrame = new InfProyecto();
+            frmPrincipal.Navigate(selFrame);
         }
 
         private void BtProyectos_Click(object sender, RoutedEventArgs e)
