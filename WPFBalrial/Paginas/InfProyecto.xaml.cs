@@ -27,7 +27,6 @@ namespace WPFBalrial.Paginas
     public partial class InfProyecto : Page
     {
 
-        private IEnumerable<PlanificacionDTO> datosGr = new List<PlanificacionDTO>();
 
         private int idProyecto = 1;
         public InfProyecto()
@@ -62,38 +61,6 @@ namespace WPFBalrial.Paginas
             model.Axes.Add(valueAxis);
 
             this.grBarras.Model = model;
-        }
-
-        public void ConsultarDatos()
-        {
-
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
-                    HttpResponseMessage response = client.GetAsync("api/proyectos/"+ idProyecto.ToString()+ "/planificaciones").Result;
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        datosGr = response.Content.ReadAsAsync<IEnumerable<PlanificacionDTO>>().Result;
-
-                    }
-                    else
-                    {
-                        tbAvisos.Text = "Se ha producido un error";
-                        tbAvisos.Foreground = Brushes.White;
-                        tbAvisos.Background = Brushes.Crimson;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
     }
 }
