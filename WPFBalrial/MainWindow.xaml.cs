@@ -63,8 +63,8 @@ namespace WPFBalrial
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://192.168.1.130:8080/");
-                   // client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                   // client.BaseAddress = new Uri("http://192.168.1.130:8080/");
+                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
@@ -99,8 +99,8 @@ namespace WPFBalrial
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://192.168.1.130:8080/");
-                   // client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                    // client.BaseAddress = new Uri("http://192.168.1.130:8080/");
+                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
