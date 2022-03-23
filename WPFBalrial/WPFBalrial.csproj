@@ -81,6 +81,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DTOs\EntidadDTO.cs" />
+    <Compile Include="DTOs\InformeDTO.cs" />
     <Compile Include="DTOs\UbicacionDTO.cs" />
     <Compile Include="DTOs\LoginDTO.cs" />
     <Compile Include="DTOs\RolDTO.cs" />
@@ -106,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\IniLogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\PlanList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,6 +162,9 @@
     </Compile>
     <Compile Include="Paginas\IniLogo.xaml.cs">
       <DependentUpon>IniLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\PlanList.xaml.cs">
+      <DependentUpon>PlanList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\ProIns.xaml.cs">
       <DependentUpon>ProIns.xaml</DependentUpon>
