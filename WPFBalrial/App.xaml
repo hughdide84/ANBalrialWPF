@@ -4,10 +4,15 @@
              xmlns:local="clr-namespace:WPFBalrial"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
+        <Style TargetType="Window">
+            <Setter Property="BorderBrush" Value="#FF42C2FF"/>
+        </Style>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Background" Value="#FF96F6FF"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Lucida Sans"/>
+            <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Padding" Value="4"/>
             <Setter Property="Width" Value="120"/>
@@ -15,31 +20,31 @@
             <Setter Property="Margin" Value="5,5,0,5"/>
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Lucida Sans"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Margin" Value="0,5,5,0"/>
             <Setter Property="Padding" Value="3"/>
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Lucida Sans"/>
             <Setter Property="FontSize" Value="15"/>
         </Style>
         <Style x:Key="txtDetalle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Lucida Sans"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="Padding" Value="0,12,5,0"/>
         </Style>
         <Style x:Key="txtTitulo" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Lucida Sans"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>
         <Style x:Key="txtAviso" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Lucida Sans"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Padding" Value="5"/>
@@ -53,6 +58,27 @@
         <Style TargetType="ListView">
             <Setter Property="Margin" Value="0,0,5,0"/>
             <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="Background" Value="#FFEFFFFD"/>
         </Style>
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="Background" Value="#FF96F6FF"/>
+        </Style>
+        <Style TargetType="Frame">
+            <Setter Property="Background" Value="#FFEFFFFD"/>
+        </Style>
+        <Style TargetType="DockPanel">
+            <Setter Property="Background" Value="#FFEFFFFD"/>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="375"/>
+            <Setter Property="Height" Value="668"/>
+            <Setter Property="Opacity" Value="0.6"/>
+        </Style>
+
     </Application.Resources>
 </Application>

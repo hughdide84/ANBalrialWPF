@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFBalrial"
         mc:Ignorable="d"
-        Title="BALRIAL APP" Height="450" Width="800">
+        Title="BALRIAL APP" Height="450" Width="800" >
     <DockPanel>
         <DockPanel DockPanel.Dock="Left" Width="150">
             <StackPanel Name="pnlLogin" DockPanel.Dock="Top" >
@@ -23,7 +23,6 @@
                 </StackPanel>
             </Grid>
         </DockPanel>
-
         <Frame Name="frmPrincipal" NavigationUIVisibility="Hidden"/>
     </DockPanel>
 </Window>

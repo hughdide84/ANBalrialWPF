@@ -82,6 +82,8 @@
     </Compile>
     <Compile Include="DTOs\EntidadDTO.cs" />
     <Compile Include="DTOs\UbicacionDTO.cs" />
+    <Compile Include="DTOs\LoginDTO.cs" />
+    <Compile Include="DTOs\RolDTO.cs" />
     <Compile Include="DTOs\UsuarioDTO.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -100,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\InfProyecto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\IniLogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,6 +154,9 @@
     </Compile>
     <Compile Include="Paginas\InfProyecto.xaml.cs">
       <DependentUpon>InfProyecto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\IniLogo.xaml.cs">
+      <DependentUpon>IniLogo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\ProIns.xaml.cs">
       <DependentUpon>ProIns.xaml</DependentUpon>
@@ -199,6 +208,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Recursos\LogoBanco.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
