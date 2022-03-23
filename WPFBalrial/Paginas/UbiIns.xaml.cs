@@ -33,12 +33,15 @@ namespace WPFBalrial.Paginas
 
         private void BtGuardar_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            InsertarUbicacion();
         }
 
         private void BtSalir_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
         }
 
         public void InsertarUbicacion()
