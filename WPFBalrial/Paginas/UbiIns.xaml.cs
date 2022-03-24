@@ -78,7 +78,7 @@ namespace WPFBalrial.Paginas
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                    client.BaseAddress = new Uri(App.URL);
                    // client.BaseAddress = new Uri("http://localhost:8080/");
 
                     client.DefaultRequestHeaders.Accept.Clear();
