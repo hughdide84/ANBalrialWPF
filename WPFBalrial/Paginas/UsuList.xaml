@@ -31,6 +31,14 @@
                         <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" />
                         <GridViewColumn Header="Apellidos" DisplayMemberBinding="{Binding apellidos}" />
                         <GridViewColumn Header="Login"  DisplayMemberBinding="{Binding login}" />
+                        <GridViewColumn Header="Código postal" DisplayMemberBinding="{Binding cp}"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding email}"/>
+                        <GridViewColumn Header="Teléfono" DisplayMemberBinding="{Binding telefono}"/>
+                        <GridViewColumn Header="Telegram id" DisplayMemberBinding="{Binding telegramId}"/>
+                        <GridViewColumn Header="Días" DisplayMemberBinding="{Binding dias}"/>
+                        <GridViewColumn Header="Hora inicio" DisplayMemberBinding="{Binding horaInicio}"/>
+                        <GridViewColumn Header="Hora fin" DisplayMemberBinding="{Binding horaFin}"/>
+                        <GridViewColumn Header="Disponibilidad" DisplayMemberBinding="{Binding disponibilidad}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
