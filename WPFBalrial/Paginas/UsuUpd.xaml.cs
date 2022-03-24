@@ -124,6 +124,7 @@ namespace WPFBalrial.Paginas
             // IsValidEmail(tbEmail.Text);
             if (!IsValidEmail(tbEmail.Text))
             {
+                ResetearAviso();
                 tbAvisos.Text = "Email incorrecto";
                 tbAvisos.Foreground = Brushes.White;
                 tbAvisos.Background = Brushes.Crimson;
@@ -137,6 +138,7 @@ namespace WPFBalrial.Paginas
             // IsValidCp(tbCP.Text);
             if (!IsValidCp(tbCP.Text))
             {
+                ResetearAviso();
                 tbAvisos.Text = "Codigo postal incorrecto";
                 tbAvisos.Foreground = Brushes.White;
                 tbAvisos.Background = Brushes.Crimson;
@@ -148,8 +150,34 @@ namespace WPFBalrial.Paginas
             }
 
             usuarioDTO.dias = diasSemana;
-            usuarioDTO.horaInicio = tbHoraInicio.Text;
-            usuarioDTO.horaFin = tbHoraFin.Text;
+
+            if (!IsValidHoraIni(tbHoraInicio.Text))
+            {
+                ResetearAviso();
+                tbAvisos.Text = "Hora de Inicio incorrecta";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+                return;
+            }
+            else
+            {
+                usuarioDTO.horaInicio = tbHoraInicio.Text;
+            }
+
+
+            if (!IsValidHoraFin(tbHoraFin.Text))
+            {
+                ResetearAviso();
+                tbAvisos.Text = "Hora de Fin incorrecta";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+                return;
+            }
+            else
+            {
+                usuarioDTO.horaFin = tbHoraFin.Text;
+            }
+
             usuarioDTO.disponibilidad = 1;
 
             try
@@ -164,12 +192,14 @@ namespace WPFBalrial.Paginas
 
                     if (response.IsSuccessStatusCode)
                     {
+                        ResetearAviso();
                         tbAvisos.Text = " Actualizado correctamente";
                         tbAvisos.Foreground = Brushes.White;
                         tbAvisos.Background = Brushes.Green;
                     }
                     else
                     {
+                        ResetearAviso();
                         tbAvisos.Text = " Se ha producido un error";
                         tbAvisos.Foreground = Brushes.White;
                         tbAvisos.Background = Brushes.Crimson;
@@ -235,6 +265,25 @@ namespace WPFBalrial.Paginas
             {
                 return false;
             }
+        }
+
+        public static bool IsValidHoraIni(string inicio)
+        {
+            Regex checktime = new Regex(@"^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$");
+            return checktime.IsMatch(inicio);
+        }
+        public static bool IsValidHoraFin(string fin)
+        {
+            Regex checktime = new Regex(@"^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$");
+            return checktime.IsMatch(fin);
+        }
+
+        private void ResetearAviso()
+        {
+            tbAvisos.Text = "";
+            tbAvisos.Foreground = Brushes.White;
+            tbAvisos.Background = Brushes.White;
+            tbAvisos.Visibility = Visibility.Collapsed;
         }
     }
 }
