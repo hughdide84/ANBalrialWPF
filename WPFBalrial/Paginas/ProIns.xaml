@@ -9,6 +9,40 @@
       Title="ProIns">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Content="Aceptar" Grid.Column="0" Click="btnAccept"/>
+            <Button Content="Cancelar" Grid.Column="1" Click="btnCancel"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Nombre"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="textBlockName"/>
+            
+            <Label Content="FechaInicio" Grid.Row="1"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="textBlockFechaInicio"/>
+            <Label Content="FechaFin" Grid.Row="2" Grid.Column="0"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="textBlockFechaFin"/>
+        </Grid>
     </Grid>
 </Page>

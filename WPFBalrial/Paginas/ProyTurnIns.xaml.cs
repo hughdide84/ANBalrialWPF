@@ -19,32 +19,30 @@ using WPFBalrial.DTOs;
 namespace WPFBalrial.Paginas
 {
     /// <summary>
-    /// Lógica de interacción para ProIns.xaml
+    /// Lógica de interacción para Page1.xaml
     /// </summary>
-    public partial class ProIns : Page
+    public partial class ProyTurnIns : Page
     {
+        private int idProyecto;
         private int? id;
-        public ProIns(int? idProyecto)
+        public ProyTurnIns(int idProyecto,int? id)
         {
-            this.id = idProyecto;
+            this.id = id;
+            this.idProyecto = idProyecto;
             InitializeComponent();
             if (this.id!=null)
             {
-                converTextBoxWithValues((int)this.id);
+                setTextBoxWithValues((int)this.id);
             }
         }
 
-        private void btnCancel(object sender, RoutedEventArgs e)
+        private void btn_accept(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new ProList());
-        }
-        private void btnAccept(object sender, RoutedEventArgs e)
-        {
-            ProyectoDTO proyectoDTO = new ProyectoDTO();
-            proyectoDTO.nombre = textBlockName.Text;
-            proyectoDTO.fechaInicio = textBlockFechaInicio.Text;
-            proyectoDTO.fechaFin = textBlockFechaInicio.Text;
-            resetTextFields();
+            var proy = new ProyTurnoDTO();
+            proy.idProyecto = this.idProyecto;
+            proy.horaInicio = textBoxInicio.Text;
+            proy.horaFin = textBoxFin.Text;
+            resetTextBox();
             if (this.id==null)
             {
                 using (var client = new HttpClient())
@@ -53,26 +51,33 @@ namespace WPFBalrial.Paginas
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
-                    HttpResponseMessage response = client.PostAsJsonAsync("api/proyectos", proyectoDTO).Result;
+                    HttpResponseMessage response = client.PostAsJsonAsync("api/turnoproyectos", proy).Result;
                 }
             }
             else
             {
-                proyectoDTO.id = (int)id;
+                proy.id = (int)this.id;
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(App.URL);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
-                    HttpResponseMessage response = client.PutAsJsonAsync(String.Format("api/proyectos/{0}",proyectoDTO.id), proyectoDTO).Result;
+                    HttpResponseMessage response = client.PutAsJsonAsync(String.Format("api/turnoproyectos/{0}", proy.id), proy).Result;
                 }
                 this.NavigationService.GoBack();
             }
-            
-            
         }
-        private void converTextBoxWithValues(int id)
+        private void btn_cancel(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+        private void resetTextBox()
+        {
+            textBoxFin.Text = "";
+            textBoxInicio.Text = "";
+        }
+        private void setTextBoxWithValues(int id)
         {
             using (var client = new HttpClient())
             {
@@ -80,21 +85,16 @@ namespace WPFBalrial.Paginas
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
-                var response = client.GetAsync(String.Format("api/proyectos/{0}", id)).Result;
+                HttpResponseMessage response = client.GetAsync("api/turnoproyectos/" + id).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    var obj=response.Content.ReadAsAsync<ProyectoDTO>().Result;
-                    textBlockName.Text = obj.nombre;
-                    textBlockFechaInicio.Text = obj.fechaInicio;
-                    textBlockFechaFin.Text = obj.fechaFin;
+                    var x = response.Content.ReadAsAsync<ProyTurnoDTO>().Result;
+                    textBoxFin.Text = x.horaFin;
+                    textBoxInicio.Text = x.horaInicio;
+                   
                 }
             }
         }
-        private void resetTextFields()
-        {
-            textBlockName.Text = "";
-            textBlockFechaInicio.Text = "";
-            textBlockFechaFin.Text = "";
-        }
+        
     }
 }
