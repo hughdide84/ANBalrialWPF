@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -100,7 +102,7 @@ namespace WPFBalrial.Paginas
             }
             var usuarioDTO = new UsuarioDTO()
             {
-                id = Int32.Parse(tbId.Text),
+                /*id = Int32.Parse(tbId.Text),
                 nombre = tbNombre.Text,
                 apellidos = tbApellidos.Text,
                 login = tbLogin.Text,
@@ -110,8 +112,45 @@ namespace WPFBalrial.Paginas
                 dias = diasSemana,
                 horaInicio = tbHoraInicio.Text,
                 horaFin = tbHoraFin.Text,
-                disponibilidad = 1
+                disponibilidad = 1*/
             };
+
+            usuarioDTO.id = Int32.Parse(tbId.Text);
+            usuarioDTO.nombre = tbNombre.Text;
+            usuarioDTO.apellidos = tbApellidos.Text;
+            usuarioDTO.login = tbLogin.Text;
+            usuarioDTO.telefono = tbTelefono.Text;
+
+            // IsValidEmail(tbEmail.Text);
+            if (!IsValidEmail(tbEmail.Text))
+            {
+                tbAvisos.Text = "Email incorrecto";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+                return;
+            }
+            else
+            {
+                usuarioDTO.email = tbEmail.Text;
+            }
+
+            // IsValidCp(tbCP.Text);
+            if (!IsValidCp(tbCP.Text))
+            {
+                tbAvisos.Text = "Codigo postal incorrecto";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+                return;
+            }
+            else
+            {
+                usuarioDTO.cp = Int32.Parse(tbCP.Text);
+            }
+
+            usuarioDTO.dias = diasSemana;
+            usuarioDTO.horaInicio = tbHoraInicio.Text;
+            usuarioDTO.horaFin = tbHoraFin.Text;
+            usuarioDTO.disponibilidad = 1;
 
             try
             {
@@ -140,6 +179,61 @@ namespace WPFBalrial.Paginas
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
+
+                string DomainMapper(Match match)
+                {
+                    var idn = new IdnMapping();
+
+                    string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                    return match.Groups[1].Value + domainName;
+                }
+            }
+            catch (RegexMatchTimeoutException e)
+            {
+                return false;
+            }
+            catch (ArgumentException e)
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
+        }
+
+        public static bool IsValidCp(string cp)
+        {
+            int _val;
+
+            if (cp.Length == 5)
+            {
+                bool valor = Int32.TryParse(cp, out _val);
+                return valor;
+            }
+            else
+            {
+                return false;
             }
         }
     }

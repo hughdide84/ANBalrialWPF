@@ -118,22 +118,44 @@ namespace WPFBalrial.Paginas
             // IsValidCp(tbCP.Text);
             if (!IsValidCp(tbCP.Text))
             {
-                tbAvisos.Text = "Codigo postal incorrecto incorrecto";
+                tbAvisos.Text = "Codigo postal incorrecto";
                 tbAvisos.Foreground = Brushes.White;
                 tbAvisos.Background = Brushes.Crimson;
                 return;
             }
             else
             {
-                usuarioDTO.email = tbCP.Text;
+                usuarioDTO.cp = Int32.Parse(tbCP.Text);
             }
 
-            usuarioDTO.cp = Int32.Parse(tbCP.Text);
-
-
             usuarioDTO.dias = diasSemana;
-            usuarioDTO.horaInicio = tbHoraInicio.Text;
-            usuarioDTO.horaFin = tbHoraFin.Text;
+
+            // IsValidHoraIni(tbHoraInicio.Text)
+            if (!IsValidHoraIni(tbHoraInicio.Text))
+            {
+                tbAvisos.Text = "Hora de Inicio incorrecta";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+                return;
+            }
+            else
+            {
+                usuarioDTO.horaInicio = tbHoraInicio.Text;
+            }
+
+            // IsValidHoraFin(tbHoraFin.Text)
+            if (!IsValidHoraFin(tbHoraFin.Text))
+            {
+                tbAvisos.Text = "Hora de Fin incorrecta";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+                return;
+            }
+            else
+            {
+                usuarioDTO.horaFin = tbHoraFin.Text;
+            }
+
             usuarioDTO.disponibilidad = 1;
 
             try
@@ -174,17 +196,13 @@ namespace WPFBalrial.Paginas
 
             try
             {
-                // Normalize the domain
                 email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
                                       RegexOptions.None, TimeSpan.FromMilliseconds(200));
 
-                // Examines the domain part of the email and normalizes it.
                 string DomainMapper(Match match)
                 {
-                    // Use IdnMapping class to convert Unicode domain names.
                     var idn = new IdnMapping();
 
-                    // Pull out and process domain name (throws ArgumentException on invalid)
                     string domainName = idn.GetAscii(match.Groups[2].Value);
 
                     return match.Groups[1].Value + domainName;
@@ -224,8 +242,17 @@ namespace WPFBalrial.Paginas
             {
                 return false;
             }
+        }
 
-            
+        public static bool IsValidHoraIni(string inicio)
+        {
+            Regex checktime = new Regex(@"^(20|21|22|23|[01]d|d)(([:][0-5]d){1,2})$");
+            return checktime.IsMatch(inicio);
+        }
+        public static bool IsValidHoraFin(string fin)
+        {
+            Regex checktime = new Regex(@"^(20|21|22|23|[01]d|d)(([:][0-5]d){1,2})$");
+            return checktime.IsMatch(fin);
         }
     }
 }
