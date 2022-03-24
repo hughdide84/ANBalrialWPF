@@ -63,19 +63,19 @@ namespace WPFBalrial.Paginas
         {
             ResetearAviso();
             UbiIns selFrame = new UbiIns();
+            selFrame.idEntidad = Int32.Parse(tbId.Text);
             this.NavigationService.Navigate(selFrame);
         }
 
-        private void BtEliminarUbi_Click(object sender, RoutedEventArgs e)
-        {
-            ResetearAviso();
-            var eleSeleccionados = this.lvUbicaciones.SelectedItems;
+        private void BtEliminarUbi_Click(object sender, RoutedEventArgs e) { 
+         ResetearAviso();
+        var eleSeleccionados = this.lvUbicaciones.SelectedItems;
 
-            var idSel = 0;
-            foreach (EntidadDTO entidadDTO in eleSeleccionados)
+        var idSel = 0;
+            foreach (UbicacionDTO ubicacionDTO in eleSeleccionados)
             {
-                idSel = entidadDTO.id;
-
+                idSel = ubicacionDTO.id;
+                
             }
 
             if (idSel == 0)
@@ -86,8 +86,10 @@ namespace WPFBalrial.Paginas
             }
             else
             {
-                EliminarUbicacion(idSel);
-                ListarUbicaciones();
+
+            EliminarUbicacion(idSel);
+            ListarUbicaciones();
+
             }
         }
 
@@ -113,6 +115,7 @@ namespace WPFBalrial.Paginas
             else
             {
                 UbiUpd selFrame = new UbiUpd(ubicacionDTO);
+                selFrame.idEntidad = Int32.Parse(tbId.Text);
                 this.NavigationService.Navigate(selFrame, idSel);
             }
         }
@@ -215,11 +218,13 @@ namespace WPFBalrial.Paginas
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                    //client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                    client.BaseAddress = new Uri("http://localhost:8080/");
+
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
-                    HttpResponseMessage response = client.DeleteAsync("api/entidades/" + idUbicacion).Result;
+                    HttpResponseMessage response = client.DeleteAsync("api/ubicaciones/" + idUbicacion).Result;
 
                     if (response.IsSuccessStatusCode)
                     {
