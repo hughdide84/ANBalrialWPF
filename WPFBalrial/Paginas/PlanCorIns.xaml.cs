@@ -24,11 +24,20 @@ namespace WPFBalrial.Paginas
     /// </summary>
     public partial class PlanCorIns : Page
     {
+        int idPlan;
+
         public PlanCorIns(int idPlan)
         {
+            this.idPlan = idPlan;
 
             InitializeComponent();
 
+        }
+
+
+        public void SetAlgo(int idPlan)
+        {
+            this.idPlan = idPlan;
 
             try
             {
@@ -38,7 +47,7 @@ namespace WPFBalrial.Paginas
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
-                    HttpResponseMessage response = client.GetAsync("api/planificaciones/"+ idPlan + "/usuariosAsignados").Result;
+                    HttpResponseMessage response = client.GetAsync("api/planificaciones/" + idPlan + "/usuariosAsignados").Result;
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -75,14 +84,48 @@ namespace WPFBalrial.Paginas
             }
         }
 
+
+
         private void EliminarButto_Click(object sender, RoutedEventArgs e)
         {
+            Button obj = ((FrameworkElement)sender).DataContext as Button;
 
+            int id = (dtAsignados.SelectedItem as PlanificacionDTO).id;
+            Trace.WriteLine(id);
+
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
+                HttpResponseMessage response = client.DeleteAsync("api/planificacionUsuario/" + id).Result;
+            }
+
+            SetAlgo(id);
         }
+
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            Button obj = ((FrameworkElement)sender).DataContext as Button;
 
+            int id = (dtDisponibles.SelectedItem as PlanificacionDTO).id;
+            Trace.WriteLine(id);
+
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
+                HttpResponseMessage response = client.PostAsync("api/planificacionUsuario/" + id, null).Result;
+            }
+
+            SetAlgo(id);
         }
+
     }
 }

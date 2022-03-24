@@ -12,8 +12,7 @@
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="20"/>
-            <Setter Property="Background" Value="#2c2c2c"/>8
-
+            <Setter Property="Background" Value="#2c2c2c"/>
         </Style>
     </Page.Resources>
 
