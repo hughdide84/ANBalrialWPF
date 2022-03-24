@@ -41,7 +41,7 @@ namespace WPFBalrial.Paginas
             this.tbId.Text = ubicacionDTO.id.ToString();
             
 
-            client.BaseAddress = new Uri("http://localhost:8080/");
+            client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
@@ -83,8 +83,8 @@ namespace WPFBalrial.Paginas
             {
                 using (var client = new HttpClient())
                 {
-                    //client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
-                    client.BaseAddress = new Uri("http://localhost:8080/");
+                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                    //client.BaseAddress = new Uri("http://localhost:8080/");
 
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

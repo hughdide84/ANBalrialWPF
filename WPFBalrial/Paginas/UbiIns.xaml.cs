@@ -78,8 +78,8 @@ namespace WPFBalrial.Paginas
             {
                 using (var client = new HttpClient())
                 {
-                   // client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
-                    client.BaseAddress = new Uri("http://localhost:8080/");
+                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                   // client.BaseAddress = new Uri("http://localhost:8080/");
 
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
