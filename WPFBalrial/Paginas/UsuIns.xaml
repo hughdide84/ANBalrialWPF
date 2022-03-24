@@ -54,13 +54,13 @@
                 <TextBox Name="tbHoraInicio"/>
                 <TextBox Name="tbHoraFin"/>
                                           
-                <CheckBox Name="cbL" Content="L" IsChecked="False"/>
-                <CheckBox Name="cbM" Content="M" IsChecked="False"/>
-                <CheckBox Name="cbX" Content="X" IsChecked="False"/>
-                <CheckBox Name="cbJ" Content="J" IsChecked="False"/>
-                <CheckBox Name="cbV" Content="V" IsChecked="False"/>
-                <CheckBox Name="cbS" Content="S" IsChecked="False"/>
-                <CheckBox Name="cbD" Content="D" IsChecked="False"/>
+                <CheckBox Name="cbL" Content="Lunes" IsChecked="False"/>
+                <CheckBox Name="cbM" Content="Martes" IsChecked="False"/>
+                <CheckBox Name="cbX" Content="Miercoles" IsChecked="False"/>
+                <CheckBox Name="cbJ" Content="Jueves" IsChecked="False"/>
+                <CheckBox Name="cbV" Content="Viernes" IsChecked="False"/>
+                <CheckBox Name="cbS" Content="Sabado" IsChecked="False"/>
+                <CheckBox Name="cbD" Content="Domingo" IsChecked="False"/>
             </StackPanel>
         </Grid>
         

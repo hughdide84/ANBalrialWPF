@@ -108,13 +108,29 @@ namespace WPFBalrial.Paginas
                 tbAvisos.Text = "Email incorrecto";
                 tbAvisos.Foreground = Brushes.White;
                 tbAvisos.Background = Brushes.Crimson;
+                return;
             }
             else
             {
                 usuarioDTO.email = tbEmail.Text;
             }
 
+            // IsValidCp(tbCP.Text);
+            if (!IsValidCp(tbCP.Text))
+            {
+                tbAvisos.Text = "Codigo postal incorrecto incorrecto";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+                return;
+            }
+            else
+            {
+                usuarioDTO.email = tbCP.Text;
+            }
+
             usuarioDTO.cp = Int32.Parse(tbCP.Text);
+
+
             usuarioDTO.dias = diasSemana;
             usuarioDTO.horaInicio = tbHoraInicio.Text;
             usuarioDTO.horaFin = tbHoraFin.Text;
@@ -193,6 +209,23 @@ namespace WPFBalrial.Paginas
             {
                 return false;
             }
+        }
+
+        public static bool IsValidCp(string cp)
+        {
+            int _val;
+
+            if (cp.Length == 5)
+            {
+                bool valor = Int32.TryParse(cp, out _val);
+                return valor;
+            }
+            else
+            {
+                return false;
+            }
+
+            
         }
     }
 }
