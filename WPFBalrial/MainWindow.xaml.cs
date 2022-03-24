@@ -17,6 +17,7 @@ using WPFBalrial.Paginas;
 using WPFBalrial.DTOs;
 using System.Net.Http.Headers;
 
+
 namespace WPFBalrial
 {
     /// <summary>
@@ -34,8 +35,9 @@ namespace WPFBalrial
             pnlLogin.Visibility = Visibility.Visible;
             pnlMenu.Visibility = Visibility.Hidden;
 
-            IniLogo logoFrame = new IniLogo();
-            frmPrincipal.Navigate(logoFrame);
+         //   IniLogo logoFrame = new IniLogo();
+            InfProyecto infF = new InfProyecto();
+            frmPrincipal.Navigate(infF);
         }
 
         private void BtProyectos_Click(object sender, RoutedEventArgs e)

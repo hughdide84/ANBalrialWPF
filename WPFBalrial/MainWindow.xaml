@@ -12,7 +12,7 @@
                 <TextBlock Text="Usuario" Margin="5,5,0,0"/>
                 <TextBox Name="tbUsuario" Margin="5,5,0,0"/>
                 <TextBlock Text="Contraseña" Margin="5,5,0,0"/>
-                <TextBox Name="tbPassword" Margin="5,5,0,0"/>
+                <TextBox Name="tbPassword" Margin="5,5,0,0"  />
                 <Button Name="btAcceder" Content="ACCEDER" Margin="5,10,0,0"/>
             </StackPanel>
             <Grid>
