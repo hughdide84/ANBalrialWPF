@@ -128,6 +128,7 @@ namespace WPFBalrial.Paginas
                 tbAvisos.Text = "Email incorrecto";
                 tbAvisos.Foreground = Brushes.White;
                 tbAvisos.Background = Brushes.Crimson;
+                tbAvisos.Visibility = Visibility.Visible;
                 return;
             }
             else
@@ -142,6 +143,7 @@ namespace WPFBalrial.Paginas
                 tbAvisos.Text = "Codigo postal incorrecto";
                 tbAvisos.Foreground = Brushes.White;
                 tbAvisos.Background = Brushes.Crimson;
+                tbAvisos.Visibility = Visibility.Visible;
                 return;
             }
             else
@@ -157,6 +159,7 @@ namespace WPFBalrial.Paginas
                 tbAvisos.Text = "Hora de Inicio incorrecta";
                 tbAvisos.Foreground = Brushes.White;
                 tbAvisos.Background = Brushes.Crimson;
+                tbAvisos.Visibility = Visibility.Visible;
                 return;
             }
             else
@@ -171,6 +174,7 @@ namespace WPFBalrial.Paginas
                 tbAvisos.Text = "Hora de Fin incorrecta";
                 tbAvisos.Foreground = Brushes.White;
                 tbAvisos.Background = Brushes.Crimson;
+                tbAvisos.Visibility = Visibility.Visible;
                 return;
             }
             else
@@ -196,6 +200,7 @@ namespace WPFBalrial.Paginas
                         tbAvisos.Text = " Actualizado correctamente";
                         tbAvisos.Foreground = Brushes.White;
                         tbAvisos.Background = Brushes.Green;
+                        tbAvisos.Visibility = Visibility.Visible;
                     }
                     else
                     {
@@ -203,6 +208,7 @@ namespace WPFBalrial.Paginas
                         tbAvisos.Text = " Se ha producido un error";
                         tbAvisos.Foreground = Brushes.White;
                         tbAvisos.Background = Brushes.Crimson;
+                        tbAvisos.Visibility = Visibility.Visible;
                     }
                 }
             }
