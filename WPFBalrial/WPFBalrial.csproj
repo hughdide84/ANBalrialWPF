@@ -81,6 +81,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DTOs\EntidadDTO.cs" />
+    <Compile Include="DTOs\FechaProyectoDTO.cs" />
     <Compile Include="DTOs\InformeDTO.cs" />
     <Compile Include="DTOs\UbicacionDTO.cs" />
     <Compile Include="DTOs\LoginDTO.cs" />
