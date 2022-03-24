@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WPFBalrial.Paginas
 {
     /// <summary>
-    /// Lógica de interacción para ProList.xaml
+    /// Lógica de interacción para ProPlaList.xaml
     /// </summary>
-    public partial class ProList : Page
+    public partial class ProPlaList : Page
     {
-        public ProList()
+        public ProPlaList()
         {
             InitializeComponent();
 

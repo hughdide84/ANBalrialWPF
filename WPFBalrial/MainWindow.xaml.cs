@@ -35,6 +35,7 @@ namespace WPFBalrial
             pnlMenu.Visibility = Visibility.Hidden;
 
             IniLogo logoFrame = new IniLogo();
+            //ProPlaList logoFrame = new ProPlaList();
             frmPrincipal.Navigate(logoFrame);
         }
 
