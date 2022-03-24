@@ -7,6 +7,7 @@
       mc:Ignorable="d" 
       Title="IniLogo">
     <Grid>
-        <Image Source="C:\Users\FP\Documents\ANBalrialWPF\WPFBalrial\Recursos\LogoBanco.png"/>
+        
+        <Image Source="pack://application:,,,/WPFBalrial;component/Recursos/LogoBanco.png"/>
     </Grid>
 </Page>

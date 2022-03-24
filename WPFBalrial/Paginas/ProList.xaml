@@ -9,6 +9,41 @@
       Title="ProList">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView Name="listViewProyects" Grid.Column="0" Grid.Row="0"
+                  Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="nombre" DisplayMemberBinding="{Binding nombre}" />
+                    <GridViewColumn Header="fechaInicio" DisplayMemberBinding="{Binding fechaInicio}" />
+                    <GridViewColumn Header="fechaFin"  DisplayMemberBinding="{Binding fechaFin}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Column="1" Grid.RowSpan="3">
+            <Button Content="Turnos" Grid.Row="0" Click="btn_Turno"/>
+            <Button Content="Fechas" Grid.Row="1" Click="btn_Fechas"/>
+            <Button Content="Ubicaciones"/>
+            <Button Content="Generar" Grid.Row="2" Click="generate"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <Button Content="Añadir" Click="addProyecto"/>
+            <Button Content="Eliminar" Click="deleteProyect"/>
+            <Button Content="Actualizar" Click="updateProyects"/>
+            <Button Content="Editar" Click="editProyects"/>
+        </StackPanel>
+
+
     </Grid>
 </Page>

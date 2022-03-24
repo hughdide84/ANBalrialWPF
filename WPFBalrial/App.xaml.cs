@@ -13,5 +13,8 @@ namespace WPFBalrial
     /// </summary>
     public partial class App : Application
     {
+        //public static string URL = "http://192.168.1.130:8080/";
+        //public static string URL = "http://www.galsoftpre.es/apibalrial/";
+        public static string URL = "http://localhost:3333/";
     }
 }

@@ -80,6 +80,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DTOs\ProyectoDTO.cs" />
+    <Compile Include="DTOs\ProyFechaDTO.cs" />
+    <Compile Include="DTOs\ProyTurnoDTO.cs" />
     <Compile Include="DTOs\EntidadDTO.cs" />
     <Compile Include="DTOs\FechaProyectoDTO.cs" />
     <Compile Include="DTOs\InformeDTO.cs" />
@@ -104,6 +107,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\InfProyecto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\ProyTurnIns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\ProyFechaIns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\ProyFechaList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\ProyTurnList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +183,18 @@
     </Compile>
     <Compile Include="Paginas\InfProyecto.xaml.cs">
       <DependentUpon>InfProyecto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ProyTurnIns.xaml.cs">
+      <DependentUpon>ProyTurnIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ProyFechaIns.xaml.cs">
+      <DependentUpon>ProyFechaIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ProyFechaList.xaml.cs">
+      <DependentUpon>ProyFechaList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ProyTurnList.xaml.cs">
+      <DependentUpon>ProyTurnList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\IniLogo.xaml.cs">
       <DependentUpon>IniLogo.xaml</DependentUpon>

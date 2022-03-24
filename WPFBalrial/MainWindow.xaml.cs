@@ -36,9 +36,9 @@ namespace WPFBalrial
             pnlLogin.Visibility = Visibility.Visible;
             pnlMenu.Visibility = Visibility.Hidden;
 
-         //   IniLogo logoFrame = new IniLogo();
-            InfProyecto infF = new InfProyecto();
-            frmPrincipal.Navigate(infF);
+            IniLogo logoFrame = new IniLogo();
+            //InfProyecto infF = new InfProyecto();
+            frmPrincipal.Navigate(logoFrame);
         }
 
         private void BtUbicaciones_Click(object sender, RoutedEventArgs e)
@@ -49,8 +49,8 @@ namespace WPFBalrial
 
         private void BtProyectos_Click(object sender, RoutedEventArgs e)
         {
-            ProList selFrame = new ProList();
-            frmPrincipal.Navigate(selFrame);
+            
+            frmPrincipal.Navigate(new ProList());
         }
 
         private void BtEntidades_Click(object sender, RoutedEventArgs e)

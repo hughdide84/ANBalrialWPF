@@ -19,7 +19,7 @@
                 <StackPanel Name="pnlMenu">
                     <Button Name="btUsuarios" Content="USUARIOS"/>
                     <Button Name="btEntidades" Content="ENTIDADES"/>
-                    <Button Name="btProyectos" Content="PROYECTOS"/>
+                    <Button Name="btProyectos" Content="PROYECTOS" Click="BtProyectos_Click"/>
                     <Button Name="btPlanificaciones" Content="RECOGIDAS"/>
                     <Button Name="btUbicaciones" Content="UBICACIONES"/>
 
