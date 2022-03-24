@@ -9,6 +9,50 @@
       Title="UbiUpd">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Border Style="{StaticResource bordeTitulo}" >
+                <TextBlock Text="Actualizar una ubicacion" Style="{StaticResource txtTitulo}"/>
+            </Border>
+            <TextBlock Name="tbAvisos" Style="{StaticResource txtAviso}"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Id"/>
+                <TextBlock Text="Nombre" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Direccion" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Cp" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Poblacion" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Zona" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Longitud" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Latitud" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Text="Volumen" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox Name="tbId" IsEnabled="False"/>
+                <TextBox Name="tbNombre"/>
+                <TextBox Name="tbDireccion"/>
+                <TextBox Name="tbCp"/>
+                <TextBox Name="tbPoblacion"/>
+                <TextBox Name="tbZona"/>
+                <TextBox Name="tbLongitud"/>
+                <TextBox Name="tbLatitud"/>
+                <TextBox Name="tbVolumen"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="btSalir" Click="btSalir_Click" Content="SALIR"/>
+            <Button Name="btGuardar" Click="btGuardar_Click" Content="GUARDAR"/>
+        </StackPanel>
     </Grid>
 </Page>
