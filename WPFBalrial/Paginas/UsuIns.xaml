@@ -28,28 +28,26 @@
                 <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <TextBlock Text="Nombre" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                <TextBlock Text="Apellidos" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                <TextBlock Text="Login" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                <TextBlock Text="Código postal" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                <TextBlock Text="Email" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                <TextBlock Text="Teléfono" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                <TextBlock Text="Telegram id" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Nombre" HorizontalAlignment="Right"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Apellidos" HorizontalAlignment="Right"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Login" HorizontalAlignment="Right"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Código postal" HorizontalAlignment="Right"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Email" HorizontalAlignment="Right"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Teléfono" HorizontalAlignment="Right"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBox Name="tbNombre"/>
                 <TextBox Name="tbApellidos"/>
                 <TextBox Name="tbLogin"/>
+                <TextBox Name="tbCP"/>
                 <TextBox Name="tbEmail"/>
                 <TextBox Name="tbTelefono"/>
-                <TextBox Name="tbCP"/>
-                <TextBox Name="tbTelegramId"/>
             </StackPanel>
 
             <StackPanel Grid.Column="2">
-                <TextBlock Text="Hora inicio"/>
-                <TextBlock Text="Hora fin"/>
-                <TextBlock Text="Días"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Hora inicio"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Hora fin"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Días"/>
             </StackPanel>
             
             <StackPanel Grid.Column="3">

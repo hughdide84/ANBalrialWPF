@@ -38,6 +38,12 @@ namespace WPFBalrial.Paginas
             this.tbId.Text = usuarioDTO.id.ToString();
             this.tbNombre.Text = usuarioDTO.nombre;
             this.tbApellidos.Text = usuarioDTO.apellidos;
+            this.tbLogin.Text = usuarioDTO.login;
+            this.tbTelefono.Text = usuarioDTO.telefono;
+            this.tbEmail.Text = usuarioDTO.email;
+            this.tbCP.Text = usuarioDTO.cp.ToString();
+            this.tbHoraInicio.Text = usuarioDTO.horaInicio;
+            this.tbHoraFin.Text = usuarioDTO.horaFin;
 
             // Inicializar cliente
             client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
@@ -101,7 +107,6 @@ namespace WPFBalrial.Paginas
                 telefono = tbTelefono.Text,
                 email = tbEmail.Text,
                 cp = Int32.Parse(tbCP.Text),
-                telegramId = Int32.Parse(tbTelegramId.Text),
                 dias = diasSemana,
                 horaInicio = tbHoraInicio.Text,
                 horaFin = tbHoraFin.Text,
@@ -112,7 +117,7 @@ namespace WPFBalrial.Paginas
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("https://www.galsoftpre.es/apibalrial/");
+                    client.BaseAddress = new Uri("http://localhost:8080/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
@@ -130,7 +135,6 @@ namespace WPFBalrial.Paginas
                         tbAvisos.Foreground = Brushes.White;
                         tbAvisos.Background = Brushes.Crimson;
                     }
-
                 }
             }
             catch (Exception ex)

@@ -34,9 +34,7 @@
 				<TextBlock Style="{StaticResource txtDetalle}" Text="Login"/>
 				<TextBlock Style="{StaticResource txtDetalle}" Text="Email"/>
 				<TextBlock Style="{StaticResource txtDetalle}" Text="Teléfono"/>
-				<TextBlock Style="{StaticResource txtDetalle}" Text="Código postal"/>
-				<TextBlock Style="{StaticResource txtDetalle}" Text="Telegram id"/>
-				
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Código postal"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBox Name="tbId" IsEnabled="False"/>
@@ -45,8 +43,7 @@
 				<TextBox Name="tbLogin"/>
 				<TextBox Name="tbEmail"/>
 				<TextBox Name="tbTelefono"/>
-				<TextBox Name="tbCP"/>
-				<TextBox Name="tbTelegramId"/>
+                <TextBox Name="tbCP"/>
             </StackPanel>
 			
 			<StackPanel Grid.Column="2">		

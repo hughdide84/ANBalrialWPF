@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -80,7 +82,7 @@ namespace WPFBalrial.Paginas
 
             var usuarioDTO = new UsuarioDTO()
             {
-                id = 0,
+                /*id = 0,
                 nombre = tbNombre.Text,
                 apellidos = tbApellidos.Text,
                 login = tbLogin.Text,
@@ -91,14 +93,38 @@ namespace WPFBalrial.Paginas
                 dias = diasSemana,
                 horaInicio = tbHoraInicio.Text,
                 horaFin = tbHoraFin.Text,
-                disponibilidad = 1
+                disponibilidad = 1*/
             };
-                
+
+            usuarioDTO.id = 0;
+            usuarioDTO.nombre = tbNombre.Text;
+            usuarioDTO.apellidos = tbApellidos.Text;
+            usuarioDTO.login = tbLogin.Text;
+            usuarioDTO.telefono = tbTelefono.Text;
+
+            // IsValidEmail(tbEmail.Text);
+            if (!IsValidEmail(tbEmail.Text))
+            {
+                tbAvisos.Text = "Email incorrecto";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+            }
+            else
+            {
+                usuarioDTO.email = tbEmail.Text;
+            }
+
+            usuarioDTO.cp = Int32.Parse(tbCP.Text);
+            usuarioDTO.dias = diasSemana;
+            usuarioDTO.horaInicio = tbHoraInicio.Text;
+            usuarioDTO.horaFin = tbHoraFin.Text;
+            usuarioDTO.disponibilidad = 1;
+
             try
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://localhost:8080/"); 
+                    client.BaseAddress = new Uri("http://localhost:8080/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
@@ -122,6 +148,50 @@ namespace WPFBalrial.Paginas
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Normalize the domain
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
+
+                // Examines the domain part of the email and normalizes it.
+                string DomainMapper(Match match)
+                {
+                    // Use IdnMapping class to convert Unicode domain names.
+                    var idn = new IdnMapping();
+
+                    // Pull out and process domain name (throws ArgumentException on invalid)
+                    string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                    return match.Groups[1].Value + domainName;
+                }
+            }
+            catch (RegexMatchTimeoutException e)
+            {
+                return false;
+            }
+            catch (ArgumentException e)
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
             }
         }
     }
