@@ -21,6 +21,8 @@
                     <Button Name="btEntidades" Content="ENTIDADES"/>
                     <Button Name="btProyectos" Content="PROYECTOS"/>
                     <Button Name="btPlanificaciones" Content="RECOGIDAS"/>
+                    <Button Name="btUbicaciones" Content="UBICACIONES"/>
+
                 </StackPanel>
             </Grid>
         </DockPanel>

@@ -131,6 +131,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Paginas\UbiList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\UbiUpd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,6 +182,9 @@
     </Compile>
     <Compile Include="Paginas\UbiIns.xaml.cs">
       <DependentUpon>UbiIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\UbiList.xaml.cs">
+      <DependentUpon>UbiList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\UbiUpd.xaml.cs">
       <DependentUpon>UbiUpd.xaml</DependentUpon>

@@ -32,12 +32,19 @@ namespace WPFBalrial
             btAcceder.Click += BtAcceder_Click;
             btEntidades.Click += BtEntidades_Click;
             btProyectos.Click += BtProyectos_Click;
+            btUbicaciones.Click += BtUbicaciones_Click;
             pnlLogin.Visibility = Visibility.Visible;
             pnlMenu.Visibility = Visibility.Hidden;
 
          //   IniLogo logoFrame = new IniLogo();
             InfProyecto infF = new InfProyecto();
             frmPrincipal.Navigate(infF);
+        }
+
+        private void BtUbicaciones_Click(object sender, RoutedEventArgs e)
+        {
+            UbiList selFrame = new UbiList();
+            frmPrincipal.Navigate(selFrame);
         }
 
         private void BtProyectos_Click(object sender, RoutedEventArgs e)
@@ -131,12 +138,16 @@ namespace WPFBalrial
                         btEntidades.Visibility = Visibility.Visible;
                         btProyectos.Visibility = Visibility.Visible;
                         btUsuarios.Visibility = Visibility.Visible;
+                        btUbicaciones.Visibility = Visibility.Visible;
+
                     }
                     if(esCoordinador == true)
                     {
                         btEntidades.Visibility = Visibility.Collapsed;
                         btProyectos.Visibility = Visibility.Collapsed;
                         btUsuarios.Visibility = Visibility.Collapsed;
+                        btUbicaciones.Visibility = Visibility.Collapsed;
+
                     }
 
                 }
