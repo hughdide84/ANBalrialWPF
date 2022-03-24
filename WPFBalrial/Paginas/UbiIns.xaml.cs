@@ -33,6 +33,15 @@ namespace WPFBalrial.Paginas
 
         private void BtGuardar_Click(object sender, RoutedEventArgs e)
         {
+            if (tbNombre.Text == "" || tbDireccion.Text == "" || tbCp.Text == "" || tbPoblacion.Text == "" || tbZona.Text == "" || tbLongitud.Text == "" || tbLatitud.Text == "" || tbVolumen.Text == "")
+            {
+                tbAvisos.Text = "Algún campo está vacío";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+
+                return;
+            }
+
             InsertarUbicacion();
         }
 
@@ -46,8 +55,11 @@ namespace WPFBalrial.Paginas
 
         public void InsertarUbicacion()
         {
+            
+
             var ubicacionDTO = new UbicacionDTO()
             {
+
                 id = 0,
                 nombre = tbNombre.Text,
                 direccion = tbDireccion.Text,
@@ -57,9 +69,9 @@ namespace WPFBalrial.Paginas
                 longitud = Double.Parse(tbLongitud.Text),
                 latitud = Double.Parse(tbLatitud.Text),
                 volumen = Int32.Parse(tbVolumen.Text)
-
             };
 
+  
             try
             {
                 using (var client = new HttpClient())
