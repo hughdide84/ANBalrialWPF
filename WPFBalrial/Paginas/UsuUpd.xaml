@@ -31,12 +31,40 @@
                 <TextBlock Style="{StaticResource txtDetalle}" Text="Id"/>
                 <TextBlock Style="{StaticResource txtDetalle}" Text="Nombre"/>
                 <TextBlock Style="{StaticResource txtDetalle}" Text="Apellidos"/>
+				<TextBlock Style="{StaticResource txtDetalle}" Text="Login"/>
+				<TextBlock Style="{StaticResource txtDetalle}" Text="Email"/>
+				<TextBlock Style="{StaticResource txtDetalle}" Text="Teléfono"/>
+                <TextBlock Style="{StaticResource txtDetalle}" Text="Código postal"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBox Name="tbId" IsEnabled="False"/>
                 <TextBox Name="tbNombre"/>
                 <TextBox Name="tbApellidos"/>
+				<TextBox Name="tbLogin"/>
+				<TextBox Name="tbEmail"/>
+				<TextBox Name="tbTelefono"/>
+                <TextBox Name="tbCP"/>
             </StackPanel>
+			
+			<StackPanel Grid.Column="2">		
+				<TextBlock Text="Hora inicio"/>
+				<TextBlock Text="Hora fin"/>
+				<TextBlock  Text="Días"/>
+				
+			</StackPanel>
+
+			<StackPanel Grid.Column="3">
+				<TextBox Name="tbHoraInicio"/>
+				<TextBox Name="tbHoraFin"/>
+				
+				<CheckBox Name="cbL" Content="L" IsChecked="False"/>
+				<CheckBox Name="cbM" Content="M" IsChecked="False"/>
+				<CheckBox Name="cbX" Content="X" IsChecked="False"/>
+				<CheckBox Name="cbJ" Content="J" IsChecked="False"/>
+				<CheckBox Name="cbV" Content="V" IsChecked="False"/>
+				<CheckBox Name="cbS" Content="S" IsChecked="False"/>
+				<CheckBox Name="cbD" Content="D" IsChecked="False"/>
+			</StackPanel>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Button Name="btSalir" Content="SALIR"/>

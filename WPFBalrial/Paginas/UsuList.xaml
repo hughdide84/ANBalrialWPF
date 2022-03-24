@@ -8,7 +8,6 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UsuList">
 
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -32,11 +31,19 @@
                         <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" />
                         <GridViewColumn Header="Apellidos" DisplayMemberBinding="{Binding apellidos}" />
                         <GridViewColumn Header="Login"  DisplayMemberBinding="{Binding login}" />
+                        <GridViewColumn Header="Código postal" DisplayMemberBinding="{Binding cp}"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding email}"/>
+                        <GridViewColumn Header="Teléfono" DisplayMemberBinding="{Binding telefono}"/>
+                        <GridViewColumn Header="Telegram id" DisplayMemberBinding="{Binding telegramId}"/>
+                        <GridViewColumn Header="Días" DisplayMemberBinding="{Binding dias}"/>
+                        <GridViewColumn Header="Hora inicio" DisplayMemberBinding="{Binding horaInicio}"/>
+                        <GridViewColumn Header="Hora fin" DisplayMemberBinding="{Binding horaFin}"/>
+                        <GridViewColumn Header="Disponibilidad" DisplayMemberBinding="{Binding disponibilidad}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <StackPanel Grid.Column="1">
-                <TextBlock Text="BUSCADOR" Margin="5,5,5,0"/>
+            <StackPanel Grid.Column="1" x:Name="BuscadorUsuarios">
+                <TextBlock  Text="BUSCADOR" Margin="5,5,5,0"/>
                 <TextBlock Text="Nombre" Margin="5,5,5,0"/>
                 <TextBox Name="tbNombre" Margin="5,5,5,0"/>
                 <TextBlock Text="Apellidos" Margin="5,5,5,0"/>
@@ -44,7 +51,7 @@
                 <Button Name="btBuscar" Content="BUSCAR" Margin="5,10,0,0"/>
             </StackPanel>
         </Grid>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
+        <StackPanel  Grid.Row="2" Orientation="Horizontal">
             <Button Name="btInsertar" Content="AÑADIR"/>
             <Button Name="btActualizar" Content="EDITAR"/>
             <Button Name="btEliminar" Content="ELIMINAR"/>

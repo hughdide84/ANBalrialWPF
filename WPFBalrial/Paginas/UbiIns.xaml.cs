@@ -19,20 +19,30 @@ using WPFBalrial.DTOs;
 namespace WPFBalrial.Paginas
 {
     /// <summary>
-    /// Lógica de interacción para EntIns.xaml
+    /// Lógica de interacción para UbiIns.xaml
     /// </summary>
-    public partial class EntIns : Page
+    public partial class UbiIns : Page
     {
-        public EntIns()
+        public UbiIns()
         {
             InitializeComponent();
+
             btGuardar.Click += BtGuardar_Click;
             btSalir.Click += BtSalir_Click;
         }
 
         private void BtGuardar_Click(object sender, RoutedEventArgs e)
         {
-            InsertarEntidad();
+            if (tbNombre.Text == "" || tbDireccion.Text == "" || tbCp.Text == "" || tbPoblacion.Text == "" || tbZona.Text == "" || tbLongitud.Text == "" || tbLatitud.Text == "" || tbVolumen.Text == "")
+            {
+                tbAvisos.Text = "Algún campo está vacío";
+                tbAvisos.Foreground = Brushes.White;
+                tbAvisos.Background = Brushes.Crimson;
+
+                return;
+            }
+
+            InsertarUbicacion();
         }
 
         private void BtSalir_Click(object sender, RoutedEventArgs e)
@@ -43,14 +53,25 @@ namespace WPFBalrial.Paginas
             }
         }
 
-        public void InsertarEntidad()
+        public void InsertarUbicacion()
         {
-            var entidadDTO = new EntidadDTO()
+            
+
+            var ubicacionDTO = new UbicacionDTO()
             {
+
                 id = 0,
                 nombre = tbNombre.Text,
+                direccion = tbDireccion.Text,
+                cp = Int32.Parse(tbCp.Text),
+                poblacion = tbPoblacion.Text,
+                zona = tbZona.Text,
+                longitud = Double.Parse(tbLongitud.Text),
+                latitud = Double.Parse(tbLatitud.Text),
+                volumen = Int32.Parse(tbVolumen.Text)
             };
 
+  
             try
             {
                 using (var client = new HttpClient())
@@ -59,7 +80,7 @@ namespace WPFBalrial.Paginas
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = TimeSpan.FromSeconds(Convert.ToDouble(1000000));
-                    HttpResponseMessage response = client.PostAsJsonAsync("api/entidades", entidadDTO).Result;
+                    HttpResponseMessage response = client.PostAsJsonAsync("api/entidades", ubicacionDTO).Result;
 
                     if (response.IsSuccessStatusCode)
                     {

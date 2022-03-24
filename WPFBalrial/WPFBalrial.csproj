@@ -83,6 +83,12 @@
     <Compile Include="DTOs\ProyectoDTO.cs" />
     <Compile Include="DTOs\ProyFechaDTO.cs" />
     <Compile Include="DTOs\ProyTurnoDTO.cs" />
+    <Compile Include="DTOs\EntidadDTO.cs" />
+    <Compile Include="DTOs\FechaProyectoDTO.cs" />
+    <Compile Include="DTOs\InformeDTO.cs" />
+    <Compile Include="DTOs\UbicacionDTO.cs" />
+    <Compile Include="DTOs\LoginDTO.cs" />
+    <Compile Include="DTOs\RolDTO.cs" />
     <Compile Include="DTOs\UsuarioDTO.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -120,6 +126,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Paginas\IniLogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\PlanList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\ProIns.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +143,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\ProUpd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\UbiIns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\UbiUpd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +192,12 @@
     <Compile Include="Paginas\ProyTurnList.xaml.cs">
       <DependentUpon>ProyTurnList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\IniLogo.xaml.cs">
+      <DependentUpon>IniLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\PlanList.xaml.cs">
+      <DependentUpon>PlanList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\ProIns.xaml.cs">
       <DependentUpon>ProIns.xaml</DependentUpon>
     </Compile>
@@ -178,6 +206,12 @@
     </Compile>
     <Compile Include="Paginas\ProUpd.xaml.cs">
       <DependentUpon>ProUpd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\UbiIns.xaml.cs">
+      <DependentUpon>UbiIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\UbiUpd.xaml.cs">
+      <DependentUpon>UbiUpd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\UsuIns.xaml.cs">
       <DependentUpon>UsuIns.xaml</DependentUpon>
@@ -214,6 +248,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Recursos\LogoBanco.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

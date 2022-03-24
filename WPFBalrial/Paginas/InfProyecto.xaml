@@ -25,10 +25,13 @@
                 <ColumnDefinition Width="80*" />
                 <ColumnDefinition Width="150" />
             </Grid.ColumnDefinitions>
-            <oxy:PlotView Name="grBarras" Grid.Column="0"/>
+            <oxy:PlotView Name="grBarras" Grid.Column="0" />
             <StackPanel Grid.Column="1">
                 <TextBlock Text="INFORMES" Margin="5,5,5,0"/>
-                <Button Name="btInfGlobal" Content="GLOBAL" Margin="5,10,0,0"/>
+                <Button Name="btInfTurnos" Content="TURNOS" Margin="5,10,0,0" Click="btInfTurnos_Click"/>
+                <Button Name="btInfFechas" Content="FECHAS" Margin="5,10,0,0" Click="btInfFechas_Click"/>
+                <Button Name="btInfUbicaciones" Content="UBICACIONES" Margin="5,10,0,0" Click="btInfUbicaciones_Click"/>
+                <Button Name="btInfUbicacionesPor" Content="UBICACION %" Margin="5,10,0,0" Click="btInfUbicacionesPor_Click" />
             </StackPanel>
         </Grid>
     </Grid>
